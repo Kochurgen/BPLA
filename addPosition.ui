@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>246</width>
+    <height>321</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="3" column="2">
+    <widget class="QLabel" name="angleLabel">
+     <property name="text">
+      <string>Кут повороту:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="2">
+    <widget class="QLineEdit" name="angleLineEdit">
+     <property name="text">
+      <string>0</string>
+     </property>
+     <property name="frame">
+      <bool>false</bool>
+     </property>
+     <property name="readOnly">
+      <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="0">
+    <widget class="QLineEdit" name="correctionLineEdit">
+     <property name="text">
+      <string>0</string>
+     </property>
+     <property name="frame">
+      <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="2">
+    <widget class="QLineEdit" name="portLineEdit">
+     <property name="inputMask">
+      <string/>
+     </property>
+     <property name="text">
+      <string>0</string>
+     </property>
+     <property name="frame">
+      <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="2">
+    <widget class="QLabel" name="portLabel">
+     <property name="text">
+      <string>порт:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0">
+    <widget class="QLineEdit" name="ipLineEdit">
+     <property name="inputMask">
+      <string/>
+     </property>
+     <property name="text">
+      <string>0.0.0.0</string>
+     </property>
+     <property name="frame">
+      <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="0">
+    <widget class="QLabel" name="coordinatesLabel">
+     <property name="text">
+      <string>Координати:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="7" column="2">
+    <widget class="QLabel" name="longitudeLabel">
+     <property name="text">
+      <string>Широта:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="0">
+    <widget class="QLabel" name="correctionLabel">
+     <property name="text">
+      <string>Поправка:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="7" column="0">
+    <widget class="QLabel" name="latitudeLabel">
+     <property name="text">
+      <string>Довгота:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="8" column="2">
+    <widget class="QLineEdit" name="lngLineEdit">
+     <property name="inputMask">
+      <string>00.000000</string>
+     </property>
+     <property name="text">
+      <string>00.000000</string>
+     </property>
+     <property name="frame">
+      <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="0">
+    <widget class="QLabel" name="ipLabel">
+     <property name="text">
+      <string>IP адреса:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="9" column="2">
+    <widget class="QPushButton" name="savePositionPushButton">
+     <property name="text">
+      <string>Зберегти</string>
+     </property>
+    </widget>
+   </item>
+   <item row="8" column="0">
+    <widget class="QLineEdit" name="latLineEdit">
+     <property name="inputMask">
+      <string>00.000000</string>
+     </property>
+     <property name="text">
+      <string>00.000000</string>
+     </property>
+     <property name="frame">
+      <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="8" column="1">
+    <widget class="QPushButton" name="locationPushButton">
+     <property name="minimumSize">
+      <size>
+       <width>40</width>
+       <height>40</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>40</width>
+       <height>40</height>
+      </size>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>pictures/location.png</normaloff>pictures/location.png</iconset>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <tabstops>
+  <tabstop>ipLineEdit</tabstop>
+  <tabstop>portLineEdit</tabstop>
+  <tabstop>correctionLineEdit</tabstop>
+  <tabstop>angleLineEdit</tabstop>
+  <tabstop>latLineEdit</tabstop>
+  <tabstop>lngLineEdit</tabstop>
+  <tabstop>savePositionPushButton</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>
