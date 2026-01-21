@@ -78,8 +78,14 @@ class MainWindow(QtWidgets.QMainWindow):
     def setLine(self, data):
         self.browser.page().runJavaScript(str("addLine({}, {}, {}, {})".format(data.get("lng"), data.get("lat"), data.get("correction"), data.get("id"))))
 
+    def setSectore(self, data):
+        self.browser.page().runJavaScript(str("addSector({}, {}, {}, {})".format(data.get("lng"), data.get("lat"), data.get("correction"), data.get("id"))))
+
     def removeLine(self, data):
         self.browser.page().runJavaScript(str("removeLine({})".format(data.get("id"))))
+
+    def removeSector(self, data):
+        self.browser.page().runJavaScript(str("removeSectore({})".format(data.get("id"))))
 
     def setCenter(self):
         self.browser.page().runJavaScript(str("setCenter({}, {})".format(self.lat, self.lng)))
@@ -94,7 +100,7 @@ class MainWindow(QtWidgets.QMainWindow):
         self._data.append(data)
         _position = Position(data, len(self._data))
         self.layout.addWidget(_position)
-        _position.connectPosition.connect(self.setLine)
+        _position.connectPosition.connect(self.connectPosit)
         _position.changeBearingValue.connect(self.updateBearing)
         _position.updateData.connect(self.updatePosition)
         _position.disconnectPosition.connect(self.removeLine)
@@ -123,16 +129,21 @@ class MainWindow(QtWidgets.QMainWindow):
 
     def updateBearing(self, data):
         self.browser.page().runJavaScript(str("updateLineByBearing({}, {})".format(data.get("bearing"), data.get("id"))))
+        self.browser.page().runJavaScript(str("updateSectorByBearing({}, {})".format(data.get("bearing"), data.get("id"))))
+
+    def connectPosit(self, data: dict):
+        print('connectPosit')
+        self.setLine(data)
+        self.setSectore(data)
 
     def receiveResponse(self, data: dict):
         print("⚡ Отримано response_data:", data)
         if getattr(self, "w", None) is not None:
             self.w.setResponse(data)
 
-
-
 app = QtWidgets.QApplication(sys.argv)
 window = MainWindow()
 window.show()
 app.exec()
+
 

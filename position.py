@@ -58,6 +58,11 @@ class Position(QtWidgets.QWidget):
 
     def connectToPosition (self):
         self.client_socket.connectToHost(self._data.get('ip'), int(self._data.get('port')))
+        # self.connectPosition.emit({"lat": self._data.get('lat'), "lng": self._data.get('lng'), "id": self._id,
+        #                            "correction": self._data.get("correction")})
+        # self.connectPushButton.setVisible(False)
+        # self.disconnectPushButton.setVisible(True)
+        # self.activeStateElements(True)
 
     def disconnectFromPosition (self):
         self.client_socket.disconnectFromHost()
@@ -150,3 +155,5 @@ class Position(QtWidgets.QWidget):
         self.angleLineEdit.setText(self._data.get("angle"))
         self.latLineEdit.setText(self._data.get("lat"))
         self.lngLineEdit.setText(self._data.get("lng"))
+
+
